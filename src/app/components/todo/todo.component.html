@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="wrapper">
+    <form (submit)="addTask()">
+      <input
+        type="text"
+        name="inputTask"
+        class="tasks-input"
+        placeholder="Enter a task..."
+        [(ngModel)]="inputTask"
+      />
+      <button type="submit" class="tasks-input-btn">+</button>
+    </form>
+    <h3 class="tasks-header">Click on task to mark it as complete!</h3>
+    <div
+      *ngFor="let task of tasks; let i = index"
+      class="tasks {{ task.completed ? 'done' : '' }}"
+    >
+      <div class="task-content" (click)="taskCompleted(i)">
+        {{ task.content }}
+      </div>
+      <button class="task-delete" (click)="deleteTask(i)">&times;</button>
+    </div>
+  </div>
+</div>
