@@ -84,9 +84,11 @@
         border: 1px solid red;
         color: red;
         transform: translateY(-2px)
-    };
+    }
+
+    ;
 }
 
-.task-content .done {
+.done {
     text-decoration: line-through;
 }

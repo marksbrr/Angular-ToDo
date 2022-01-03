@@ -13,9 +13,9 @@
     <h3 class="tasks-header">Click on task to mark it as complete!</h3>
     <div
       *ngFor="let task of tasks; let i = index"
-      class="tasks {{ task.completed ? 'done' : '' }}"
+      class="tasks"
     >
-      <div class="task-content" (click)="taskCompleted(i)">
+      <div class="task-content  {{ task.completed ? 'done' : '' }}" (click)="taskCompleted(i)">
         {{ task.content }}
       </div>
       <button class="task-delete" (click)="deleteTask(i)">&times;</button>
